@@ -2,20 +2,30 @@
     <div>
         <svg
             id="treeMapViz"
-            :viewBox='[0, 0, 100, 100]'
-            class=".viewBoxStyle" >
+            :viewBox='[0, 0, width, height]'
+            class="viewBoxStyle" 
+            >
             <g 
                 v-for="(leaf, index) in this.treeMapLeaves"
                     :key="index"
                     :transform="'translate(' + leaf.x0 + ',' + leaf.y0 +')'"
                     >
+                <text class="viewBoxStyle"> 
+                    {{ titleText(leaf) }}
+                </text>
                 <rect
                     :id="index+'leaf'"
-                    width="20%"
-                    height="20%"
-                    class=".rectStyle"
-                >
+                    :width="leaf.x1 - leaf.x0"
+                    :height="leaf.y1 - leaf.y0"
+                    class="rectStyle">
                 </rect>
+                <circle
+                    :key="index"
+                    :cx="circleXPos(leaf)"
+                    :cy="circleYPos(leaf)"
+                    :r=10>
+                </circle>
+                
             </g>
         </svg>
     </div>    
@@ -24,18 +34,17 @@
 import * as d3 from 'd3'
 export default {
     data(){
-        return {
-            width: {
-                type: Number,
-                default: 954
-            },
-            height: {
-                type: Number,
-                default: 954
-            }
-        }
+        return {}
     },
     props:{
+        width: {
+            type: Number,
+            default: 1000
+        },
+        height: {
+            type: Number,
+            default: 1000
+        },
         users: {
             type: Object,
             default: function() {
@@ -69,17 +78,35 @@ export default {
         },
         rectHeight: function(d){
             return d.y1-d.y0
-        }  
+        },
+        rectColor: function(d){
+            while(d.depth >1)
+                d=d.parent;
+                return d3.color(d.data.name)
+        },
+        titleText: function(d){
+            let txt = d.ancestors().reverse().map(d => d.data.name)
+            let formatTxt = d3.format(d.value)
+            return txt + formatTxt
+        },
+        circleXPos: function(d){
+            return (d.x1-d.x0)/2
+        },
+        circleYPos: function(d){
+            return (d.y1-d.y0)/2
+        },
     }
 }
 </script>
 <style>
-.viewBoxStyle{
+.viewBoxStyle {
     font-size: 10px;
-    font: sans-serif 	
+    font: sans-serif    
 }
-.rectStyle{
+.rectStyle {
     fill: #000ff0;
     fill-opacity: 0.25;
+    stroke: #0000;
+    stroke-width: 3px;
 }
 </style>
