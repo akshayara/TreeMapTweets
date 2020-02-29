@@ -3,7 +3,7 @@
         <svg
             id="treeMapViz"
             :viewBox='[0, 0, 100, 100]'
-            class="viewBoxStyle" >
+            class=".viewBoxStyle" >
             <g 
                 v-for="(leaf, index) in this.treeMapLeaves"
                     :key="index"
@@ -13,7 +13,7 @@
                     :id="index+'leaf'"
                     width="20%"
                     height="20%"
-                    class="rectStyle"
+                    class=".rectStyle"
                 >
                 </rect>
             </g>
@@ -24,17 +24,18 @@
 import * as d3 from 'd3'
 export default {
     data(){
-        return {}
+        return {
+            width: {
+                type: Number,
+                default: 954
+            },
+            height: {
+                type: Number,
+                default: 954
+            }
+        }
     },
     props:{
-        width: {
-            type: Number,
-            default: 954
-        },
-        height: {
-            type: Number,
-            default: 954
-        },
         users: {
             type: Object,
             default: function() {
@@ -73,11 +74,11 @@ export default {
 }
 </script>
 <style>
-.viewBoxStyle {
+.viewBoxStyle{
     font-size: 10px;
-    font: sans-serif    
+    font: sans-serif 	
 }
-.rectStyle {
+.rectStyle{
     fill: #000ff0;
     fill-opacity: 0.25;
 }
