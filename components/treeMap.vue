@@ -20,12 +20,12 @@
                     class="rectStyle">
                 </rect>
                 <circle
+                    v-for="(user, index) in leaf.data.value"
                     :key="index"
                     :cx="circleXPos(leaf)"
                     :cy="circleYPos(leaf)"
                     :r=10>
-                </circle>
-                
+                </circle>  
             </g>
         </svg>
     </div>    
