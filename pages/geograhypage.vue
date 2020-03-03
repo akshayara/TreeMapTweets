@@ -1,6 +1,6 @@
 <template>
     <div>
-        <tree-map :users="users"></tree-map>
+        <tree-map :users="users" :temp="usersSet"></tree-map>
     </div>
 </template>
 <script>
@@ -35,6 +35,64 @@ export default {
                     }
                 ]
             },
+            usersSet: [
+                { 
+                    name: 'a', 
+                    tweets: [{}, {}, {}], 
+                    location: { 
+                        country: 'USA', 
+                        state: 'WA' 
+                    }
+                },
+                { 
+                    name: 'b', 
+                    tweets: [{}, {}, {}], 
+                    location: { 
+                        country: 'USA', 
+                        state: 'CA' 
+                    } 
+                },
+                { 
+                    name: 'c', 
+                    tweets: [{}, {}, {}], 
+                    location: { 
+                        country: 'USA', 
+                        state: 'CA' 
+                    } 
+                },
+                { 
+                    name: 'd', 
+                    tweets: [{}, {}, {}], 
+                    location: { 
+                        country: 'USA', 
+                        state: 'FL' 
+                    } 
+                },
+                { 
+                    name: 'e', 
+                    tweets: [{}, {}, {}], 
+                    location: { 
+                        country: 'Canada', 
+                        state: 'AB' 
+                    } 
+                },
+                { 
+                    name: 'f', 
+                    tweets: [{}, {}, {}], 
+                    location: { 
+                        country: 'Canada', 
+                        state: 'ON' 
+                    }
+                },
+                { 
+                    name: 'g', 
+                    tweets: [{}, {}, {}], 
+                    location: { 
+                        country: 'India',
+                        state: 'Delhi'
+                    }
+                }
+            ]
         }
     },
     components: {

@@ -50,6 +50,10 @@ export default {
             default: function() {
                 return {}
             }
+        },
+        temp: {
+            type: Array,
+            default: () => []
         }
     },
     computed:{
@@ -60,6 +64,28 @@ export default {
         treeMapLeaves: function(){
             let leaves = this.treeMapData.leaves()
             return leaves
+        },
+        locationObj: function(){
+            const endResult = []
+
+            //Iterate the array of location objects to get the array of countries
+            for(const loc of this.temp.map(a => a.location)){
+                const filteredArray = endResult.filter(o => o.country === loc.country)
+                if(filteredArray.length === 0)
+                    endResult.push({
+                        country: loc.country,
+                        children: [{name: loc.state, value:0}]
+                    })
+                const foundCountry = endResult.filter(o => o.country === loc.country)[0]
+                const foundIndex = foundCountry.children.findIndex(c => c.name === loc.state)
+                if (foundCountry.children[foundIndex])
+                    foundCountry.children[foundIndex].value++
+            }    
+            
+            return {
+                name: 'All',
+                children: endResult
+            }
         }
     },
     methods: {
@@ -94,7 +120,7 @@ export default {
         },
         circleYPos: function(d){
             return (d.y1-d.y0)/2
-        },
+        }
     }
 }
 </script>
