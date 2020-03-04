@@ -1,6 +1,6 @@
 <template>
     <div>
-        <tree-map :users="users" :temp="usersSet"></tree-map>
+        <tree-map :users="usersSet"></tree-map>
     </div>
 </template>
 <script>
@@ -9,32 +9,6 @@ import * as d3 from 'd3'
 export default {
     data(){
         return {
-            users: {
-                name: "countries",
-                children: [
-                    {
-                        name: 'USA',
-                        children: [
-                            { name: 'CA', value: 1},
-                            { name: 'GA', value: 3},
-                        ]
-                    },
-                    {
-                        name: 'Canada',
-                        children: [
-                            { name: 'ON', value: 5},
-                            { name: 'BC', value: 7},
-                            { name: 'AL', value: 7}
-                        ]
-                    },
-                    {
-                        name: 'UK',
-                        children: [
-                            { name: 'England', value: 5},
-                        ]
-                    }
-                ]
-            },
             usersSet: [
                 { 
                     name: 'a', 
@@ -58,6 +32,22 @@ export default {
                     location: { 
                         country: 'USA', 
                         state: 'CA' 
+                    } 
+                },
+                { 
+                    name: 'd', 
+                    tweets: [{}, {}, {}], 
+                    location: { 
+                        country: 'USA', 
+                        state: 'FL' 
+                    } 
+                },
+                { 
+                    name: 'd', 
+                    tweets: [{}, {}, {}], 
+                    location: { 
+                        country: 'USA', 
+                        state: 'FL' 
                     } 
                 },
                 { 
