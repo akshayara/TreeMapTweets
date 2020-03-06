@@ -1,10 +1,12 @@
 <template>
     <div>
         <tree-map :users="usersSet"></tree-map>
+        <world-map></world-map>
     </div>
 </template>
 <script>
 import treeMap from '~/components/treeMap.vue'
+import worldMap from '~/components/worldMap.vue'
 import * as d3 from 'd3'
 export default {
     data(){
@@ -86,7 +88,8 @@ export default {
         }
     },
     components: {
-        treeMap
+        treeMap,
+        worldMap
     }
     
 }
