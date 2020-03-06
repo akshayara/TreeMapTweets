@@ -11,8 +11,11 @@
     "generate": "nuxt generate"
   },
   "dependencies": {
-    "nuxt": "^2.0.0",
     "d3": "~5.15.0",
+    "d3-array": "^2.4.0",
+    "d3-geo": "^1.11.9",
+    "d3-geo-projection": "^2.8.1",
+    "nuxt": "^2.0.0",
     "underscore": "1.9.2"
   },
   "devDependencies": {}
