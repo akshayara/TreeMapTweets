@@ -63,7 +63,10 @@ export default {
             return this.height - this.margin.top - this.margin.bottom
         },
         projection: function(){
-            d3Projection.geoCylindricalStereographic()
+            // d3Projection.geoCylindricalStereographic()
+            // d3Geo.geoMercator()
+            // .scale(200)
+            // .translate([this.width/2, this.height/1.5])
         },
         geoPath: function(){
             d3Geo.geoPath(this.projection)
