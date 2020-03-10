@@ -16,8 +16,8 @@
                     fill="#ccc"
                     :d="sampleGeoPath()(country)"
                     :id="country.properties.name"
-                    @mouseover="mouseOver(countryName)"
-                    @mouseout="mouseOut(country.properties.name)">
+                    @mouseover="mouseOver(countryName1)"
+                    @mouseout="mouseOut(countryName1)">
                 </path>
             </g>
         </svg>
@@ -72,6 +72,9 @@ export default {
         },
         heightScat: function(){
             return this.height - this.margin.top - this.margin.bottom
+        },
+        countryName1: function(){
+            return this.countryName
         }
     },
     methods: {
@@ -83,6 +86,7 @@ export default {
             this.svgGroup.select('#' + id).style('fill', '#3B5998')
         },
         mouseOut: function(id) {
+            console.log(id)
             this.svgGroup.select('#' + id).style('fill', '#ccc')
         }
     }
