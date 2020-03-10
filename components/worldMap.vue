@@ -3,19 +3,21 @@
         <svg
             :width="width"
             :height="height">
-            <g
+            <g 
                 :tranform="'translate(' + this.margin.left + ',' + this.margin.top + ')'"
                 :width="this.widthScat"
                 :height="this.heightScat">
 
             </g>
-            <g>
+            <g id="myG">
                 <path
                     v-for="(country, index) in this.countries.features"
                     :key="index"
                     fill="#ccc"
-                    :d="geoPath"
-                    :id="country.properties.name">
+                    :d="sampleGeoPath()(country)"
+                    :id="country.properties.name"
+                    @mouseover="mouseOver(countryName)"
+                    @mouseout="mouseOut(country.properties.name)">
                 </path>
             </g>
         </svg>
@@ -48,12 +50,21 @@ export default {
                     bottom: 5
                 }
             }
+        },
+        countryName: {
+            type:String,
+            default: ''
         }
     },
     data: function () {
         return {
-            countries: countryList
+            countries: countryList,
+            projection:  d3Projection.geoCylindricalStereographic(),
+            svgGroup: null
         }
+    },
+    mounted: function(){
+        this.svgGroup = d3.select('#myG')
     },
     computed: {
         widthScat: function(){
@@ -61,18 +72,19 @@ export default {
         },
         heightScat: function(){
             return this.height - this.margin.top - this.margin.bottom
-        },
-        projection: function(){
-            // d3Projection.geoCylindricalStereographic()
-            // d3Geo.geoMercator()
-            // .scale(200)
-            // .translate([this.width/2, this.height/1.5])
-        },
-        geoPath: function(){
-            d3Geo.geoPath(this.projection)
         }
     },
     methods: {
+        sampleGeoPath: function() {
+            return d3Geo.geoPath(this.projection)
+        },
+        mouseOver: function(id) {
+            console.log(id)
+            this.svgGroup.select('#' + id).style('fill', '#3B5998')
+        },
+        mouseOut: function(id) {
+            this.svgGroup.select('#' + id).style('fill', '#ccc')
+        }
     }
 }
 </script>
