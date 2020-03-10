@@ -1,7 +1,7 @@
 <template>
     <div>
-        <tree-map :users="usersSet"></tree-map>
-        <world-map></world-map>
+        <tree-map :users="usersSet" @countryNametoPage="getCountryHovered" @countryMouseOut="getCountryOut" ></tree-map>
+        <world-map :countryName="countryName"></world-map>
     </div>
 </template>
 <script>
@@ -84,12 +84,21 @@ export default {
                         state: 'Delhi'
                     }
                 }
-            ]
+            ],
+            countryName:''
         }
     },
     components: {
         treeMap,
         worldMap
+    },
+    methods: {
+        getCountryHovered(countryName){
+            this.countryName=countryName
+        },
+        getCountryOut(countryName){
+            this.countryName=''
+        }
     }
     
 }
