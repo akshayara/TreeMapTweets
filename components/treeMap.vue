@@ -26,7 +26,9 @@
                     :cx="circleXPos(leaf)(index +1 % totcol(leaf))"
                     :cy="circleYPos(leaf)(Math.ceil(index / totcol(leaf)))"
                     :r=10
-                    :transform="'translate(' + textTransform[0] + ',' + (textTransform[1] + 60) +')'">
+                    :transform="'translate(' + textTransform[0] + ',' + (textTransform[1] + 60) +')'"
+                    @mouseover="mouseOverTree.call({}, leaf.data.users[0].location.country)"
+                    @mouseout="mouseOutTree">
                 </circle>  
             </g>
         </svg>
@@ -156,7 +158,7 @@ export default {
                     .domain(this.yScaleDomain(d))
                     .range([0, this.rectHeight(d)])
             }
-        }
+        },
     },
     methods: {
         treeMapFunc: function(da){
@@ -174,6 +176,12 @@ export default {
         },
         rectHeight: function(d){
             return d.y1-d.y0
+        },
+        mouseOverTree: function(countryName){
+            this.$emit('countryNametoPage', countryName)
+        },
+        mouseOutTree: function(){
+            this.$emit('countryMouseOut', '')
         }
     }
 }
