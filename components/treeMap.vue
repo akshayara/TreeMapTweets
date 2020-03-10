@@ -181,7 +181,7 @@ export default {
             this.$emit('countryNametoPage', countryName)
         },
         mouseOutTree: function(){
-            this.$emit('countryMouseOut', '')
+             this.$emit('countryMouseOut', '')
         }
     }
 }
