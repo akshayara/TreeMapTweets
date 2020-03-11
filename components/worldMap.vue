@@ -13,11 +13,11 @@
                 <path
                     v-for="(country, index) in this.countries.features"
                     :key="index"
-                    fill="#ccc"
                     :d="sampleGeoPath()(country)"
                     :id="country.properties.name"
-                    @mouseover="mouseOver(countryName1)"
-                    @mouseout="mouseOut(countryName1)">
+                    :fill="country.properties.name == selectedCountryName ? '#3B5998' : '#ccc'"
+                    @mouseover="mouseOver(country.properties.name)"
+                    @mouseout="mouseOut(country.properties.name)">
                 </path>
             </g>
         </svg>
@@ -51,7 +51,7 @@ export default {
                 }
             }
         },
-        countryName: {
+        selectedCountryName: {
             type:String,
             default: ''
         }
@@ -73,21 +73,19 @@ export default {
         heightScat: function(){
             return this.height - this.margin.top - this.margin.bottom
         },
-        countryName1: function(){
-            return this.countryName
-        }
+        // getCountryName: function(){
+        //     return this.countryName
+        // }
     },
     methods: {
         sampleGeoPath: function() {
             return d3Geo.geoPath(this.projection)
         },
-        mouseOver: function(id) {
-            console.log(id)
-            this.svgGroup.select('#' + id).style('fill', '#3B5998')
+        mouseOver: function(countryName) {
+            this.$emit('highlightChange', countryName)
         },
         mouseOut: function(id) {
-            console.log(id)
-            this.svgGroup.select('#' + id).style('fill', '#ccc')
+            this.$emit('highlightChange', '')
         }
     }
 }
