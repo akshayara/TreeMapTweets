@@ -1,7 +1,7 @@
 <template>
     <div>
-        <tree-map :users="usersSet" @countryNametoPage="getCountryHovered" @countryMouseOut="getCountryOut" ></tree-map>
-        <world-map :countryName="countryName"></world-map>
+        <tree-map :users="usersSet" :selectedCountryName="selectedCountryName" @highlightChange="getCountryHovered"></tree-map>
+        <world-map :selectedCountryName="selectedCountryName" @highlightChange="getCountryHovered"></world-map>
     </div>
 </template>
 <script>
@@ -13,79 +13,88 @@ export default {
         return {
             usersSet: [
                 { 
-                    name: 'a', 
+                    screen_name: 'a', 
                     tweets: [{}, {}, {}], 
+                    profile_imgae_url_https: "https://www.google.com/url?sa=i&source=images&cd=&ved=2ahUKEwimt6zdk5PoAhVmxYUKHcPeAiEQjRx6BAgBEAQ&url=https%3A%2F%2Fwww.rd.com%2Fadvice%2Frelationships%2Fonline-dating-profile-photos%2F&psig=AOvVaw1vGMfr0TMqx0X4K3E6a6S3&ust=1584041272239104",
                     location: { 
-                        country: 'USA', 
+                        country: 'United States of America', 
                         state: 'WA' 
                     }
                 },
                 { 
-                    name: 'b', 
+                    screen_name: 'b', 
                     tweets: [{}, {}, {}], 
+                    profile_imgae_url_https: "https://www.google.com/url?sa=i&source=images&cd=&ved=2ahUKEwimt6zdk5PoAhVmxYUKHcPeAiEQjRx6BAgBEAQ&url=https%3A%2F%2Fwww.rd.com%2Fadvice%2Frelationships%2Fonline-dating-profile-photos%2F&psig=AOvVaw1vGMfr0TMqx0X4K3E6a6S3&ust=1584041272239104",
                     location: { 
-                        country: 'USA', 
+                        country: 'United States of America', 
                         state: 'CA' 
                     } 
                 },
                 { 
-                    name: 'c', 
+                    screen_name: 'c', 
                     tweets: [{}, {}, {}], 
+                    profile_imgae_url_https: "https://www.google.com/url?sa=i&source=images&cd=&ved=2ahUKEwimt6zdk5PoAhVmxYUKHcPeAiEQjRx6BAgBEAQ&url=https%3A%2F%2Fwww.rd.com%2Fadvice%2Frelationships%2Fonline-dating-profile-photos%2F&psig=AOvVaw1vGMfr0TMqx0X4K3E6a6S3&ust=1584041272239104",
                     location: { 
-                        country: 'USA', 
+                        country: 'United States of America', 
                         state: 'CA' 
                     } 
                 },
                 { 
-                    name: 'd', 
+                    screen_name: 'd', 
                     tweets: [{}, {}, {}], 
+                    profile_imgae_url_https: "https://www.google.com/url?sa=i&source=images&cd=&ved=2ahUKEwimt6zdk5PoAhVmxYUKHcPeAiEQjRx6BAgBEAQ&url=https%3A%2F%2Fwww.rd.com%2Fadvice%2Frelationships%2Fonline-dating-profile-photos%2F&psig=AOvVaw1vGMfr0TMqx0X4K3E6a6S3&ust=1584041272239104",
                     location: { 
-                        country: 'USA', 
+                        country: 'United States of America', 
                         state: 'FL' 
                     } 
                 },
                 { 
-                    name: 'd', 
+                    screen_name: 'd', 
                     tweets: [{}, {}, {}], 
+                    profile_imgae_url_https: "https://www.google.com/url?sa=i&source=images&cd=&ved=2ahUKEwimt6zdk5PoAhVmxYUKHcPeAiEQjRx6BAgBEAQ&url=https%3A%2F%2Fwww.rd.com%2Fadvice%2Frelationships%2Fonline-dating-profile-photos%2F&psig=AOvVaw1vGMfr0TMqx0X4K3E6a6S3&ust=1584041272239104",
                     location: { 
-                        country: 'USA', 
+                        country: 'United States of America', 
                         state: 'FL' 
                     } 
                 },
                 { 
-                    name: 'd', 
+                    screen_name: 'd', 
                     tweets: [{}, {}, {}], 
+                    profile_imgae_url_https: "https://www.google.com/url?sa=i&source=images&cd=&ved=2ahUKEwimt6zdk5PoAhVmxYUKHcPeAiEQjRx6BAgBEAQ&url=https%3A%2F%2Fwww.rd.com%2Fadvice%2Frelationships%2Fonline-dating-profile-photos%2F&psig=AOvVaw1vGMfr0TMqx0X4K3E6a6S3&ust=1584041272239104",
                     location: { 
-                        country: 'USA', 
+                        country: 'United States of America', 
                         state: 'FL' 
                     } 
                 },
                 { 
-                    name: 'e', 
+                    screen_name: 'e', 
                     tweets: [{}, {}, {}], 
+                    profile_imgae_url_https: "https://www.google.com/url?sa=i&source=images&cd=&ved=2ahUKEwimt6zdk5PoAhVmxYUKHcPeAiEQjRx6BAgBEAQ&url=https%3A%2F%2Fwww.rd.com%2Fadvice%2Frelationships%2Fonline-dating-profile-photos%2F&psig=AOvVaw1vGMfr0TMqx0X4K3E6a6S3&ust=1584041272239104",
                     location: { 
                         country: 'Canada', 
                         state: 'AB' 
                     } 
                 },
                 { 
-                    name: 'f', 
+                    screen_name: 'f', 
                     tweets: [{}, {}, {}], 
+                    profile_imgae_url_https: "https://www.google.com/url?sa=i&source=images&cd=&ved=2ahUKEwimt6zdk5PoAhVmxYUKHcPeAiEQjRx6BAgBEAQ&url=https%3A%2F%2Fwww.rd.com%2Fadvice%2Frelationships%2Fonline-dating-profile-photos%2F&psig=AOvVaw1vGMfr0TMqx0X4K3E6a6S3&ust=1584041272239104",
                     location: { 
                         country: 'Canada', 
                         state: 'ON' 
                     }
                 },
                 { 
-                    name: 'g', 
+                    screen_name: 'g', 
                     tweets: [{}, {}, {}], 
+                    profile_imgae_url_https: "https://www.google.com/url?sa=i&source=images&cd=&ved=2ahUKEwimt6zdk5PoAhVmxYUKHcPeAiEQjRx6BAgBEAQ&url=https%3A%2F%2Fwww.rd.com%2Fadvice%2Frelationships%2Fonline-dating-profile-photos%2F&psig=AOvVaw1vGMfr0TMqx0X4K3E6a6S3&ust=1584041272239104",
                     location: { 
                         country: 'India',
                         state: 'Delhi'
                     }
                 }
             ],
-            countryName:''
+            selectedCountryName:''
         }
     },
     components: {
@@ -94,10 +103,7 @@ export default {
     },
     methods: {
         getCountryHovered(countryName){
-            this.countryName=countryName
-        },
-        getCountryOut(countryName){
-            this.countryName=countryName
+            this.selectedCountryName=countryName
         }
     }
     
