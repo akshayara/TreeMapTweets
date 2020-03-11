@@ -5,6 +5,21 @@
             :viewBox='[0, 0, width, height]'
             class="viewBoxStyle" 
             >
+            <defs>
+                <pattern
+                    v-for="(profile, index) in users"
+                    :key="index"
+                    :id="profile.screen_name"
+                    patternContentUnits="objectBoundingBox"
+                    height="100%"
+                    width="100%">
+                    <image
+                        width="1"
+                        height="1"
+                        :xlink:href="profile.profile_image_url_https">
+                    </image>
+                </pattern>
+            </defs>
             <g 
                 v-for="(leaf, index) in this.treeMapLeaves"
                     :key="index"
@@ -21,13 +36,13 @@
                     {{ leaf.data.name }}
                 </text>
                 <circle
-                    v-for="(user, index) in leaf.data.value"
+                    v-for="(user, index) in leaf.data.users"
                     :key="index"
                     :cx="circleXPos(leaf)(index +1 % totcol(leaf))"
                     :cy="circleYPos(leaf)(Math.ceil(index / totcol(leaf)))"
-                    :r=10
+                    :r="radius"
                     :transform="'translate(' + textTransform[0] + ',' + (textTransform[1] + 60) +')'"
-                    :fill="selectedCountryName == leaf.data.users[0].location.country ? 'red' : 'black'"
+                    :fill="'url(#' + user.screen_name + ')'"
                     @mouseover="mouseOverTree.call({}, leaf.data.users[0].location.country)"
                     @mouseout="mouseOutTree">
                 </circle>  
@@ -116,14 +131,14 @@ export default {
         
         totcol: function(){
             return function(d){
-                return this.rectWidth(d)/40
+                return this.rectWidth(d)/4*this.radius
             }
         },
 
         //Total rows
         totRow: function(){
             return function(d){
-                return this.rectHeight(d)/40
+                return this.rectHeight(d)/4*this.radius
             }
         },
         
@@ -164,6 +179,9 @@ export default {
                     .range([0, this.rectHeight(d)])
             }
         },
+        radius: function(){
+            return 50
+        }
     },
     methods: {
         treeMapFunc: function(da){
