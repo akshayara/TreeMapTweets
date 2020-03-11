@@ -15,7 +15,7 @@ export default {
                 { 
                     screen_name: 'a', 
                     tweets: [{}, {}, {}], 
-                    profile_imgae_url_https: "https://www.google.com/url?sa=i&source=images&cd=&ved=2ahUKEwimt6zdk5PoAhVmxYUKHcPeAiEQjRx6BAgBEAQ&url=https%3A%2F%2Fwww.rd.com%2Fadvice%2Frelationships%2Fonline-dating-profile-photos%2F&psig=AOvVaw1vGMfr0TMqx0X4K3E6a6S3&ust=1584041272239104",
+                    profile_image_url_https: "https://i2.wp.com/www.sardiniauniqueproperties.com/wp-content/uploads/2015/10/Square-Profile-Pic-1-1.jpg",
                     location: { 
                         country: 'United States of America', 
                         state: 'WA' 
@@ -24,7 +24,7 @@ export default {
                 { 
                     screen_name: 'b', 
                     tweets: [{}, {}, {}], 
-                    profile_imgae_url_https: "https://www.google.com/url?sa=i&source=images&cd=&ved=2ahUKEwimt6zdk5PoAhVmxYUKHcPeAiEQjRx6BAgBEAQ&url=https%3A%2F%2Fwww.rd.com%2Fadvice%2Frelationships%2Fonline-dating-profile-photos%2F&psig=AOvVaw1vGMfr0TMqx0X4K3E6a6S3&ust=1584041272239104",
+                    profile_image_url_https: "https://i2.wp.com/www.sardiniauniqueproperties.com/wp-content/uploads/2015/10/Square-Profile-Pic-1-1.jpg",
                     location: { 
                         country: 'United States of America', 
                         state: 'CA' 
@@ -33,7 +33,7 @@ export default {
                 { 
                     screen_name: 'c', 
                     tweets: [{}, {}, {}], 
-                    profile_imgae_url_https: "https://www.google.com/url?sa=i&source=images&cd=&ved=2ahUKEwimt6zdk5PoAhVmxYUKHcPeAiEQjRx6BAgBEAQ&url=https%3A%2F%2Fwww.rd.com%2Fadvice%2Frelationships%2Fonline-dating-profile-photos%2F&psig=AOvVaw1vGMfr0TMqx0X4K3E6a6S3&ust=1584041272239104",
+                    profile_image_url_https: "https://i2.wp.com/www.sardiniauniqueproperties.com/wp-content/uploads/2015/10/Square-Profile-Pic-1-1.jpg",
                     location: { 
                         country: 'United States of America', 
                         state: 'CA' 
@@ -42,7 +42,7 @@ export default {
                 { 
                     screen_name: 'd', 
                     tweets: [{}, {}, {}], 
-                    profile_imgae_url_https: "https://www.google.com/url?sa=i&source=images&cd=&ved=2ahUKEwimt6zdk5PoAhVmxYUKHcPeAiEQjRx6BAgBEAQ&url=https%3A%2F%2Fwww.rd.com%2Fadvice%2Frelationships%2Fonline-dating-profile-photos%2F&psig=AOvVaw1vGMfr0TMqx0X4K3E6a6S3&ust=1584041272239104",
+                    profile_image_url_https: "https://i2.wp.com/www.sardiniauniqueproperties.com/wp-content/uploads/2015/10/Square-Profile-Pic-1-1.jpg",
                     location: { 
                         country: 'United States of America', 
                         state: 'FL' 
@@ -51,7 +51,7 @@ export default {
                 { 
                     screen_name: 'd', 
                     tweets: [{}, {}, {}], 
-                    profile_imgae_url_https: "https://www.google.com/url?sa=i&source=images&cd=&ved=2ahUKEwimt6zdk5PoAhVmxYUKHcPeAiEQjRx6BAgBEAQ&url=https%3A%2F%2Fwww.rd.com%2Fadvice%2Frelationships%2Fonline-dating-profile-photos%2F&psig=AOvVaw1vGMfr0TMqx0X4K3E6a6S3&ust=1584041272239104",
+                    profile_image_url_https: "https://i2.wp.com/www.sardiniauniqueproperties.com/wp-content/uploads/2015/10/Square-Profile-Pic-1-1.jpg",
                     location: { 
                         country: 'United States of America', 
                         state: 'FL' 
@@ -60,7 +60,7 @@ export default {
                 { 
                     screen_name: 'd', 
                     tweets: [{}, {}, {}], 
-                    profile_imgae_url_https: "https://www.google.com/url?sa=i&source=images&cd=&ved=2ahUKEwimt6zdk5PoAhVmxYUKHcPeAiEQjRx6BAgBEAQ&url=https%3A%2F%2Fwww.rd.com%2Fadvice%2Frelationships%2Fonline-dating-profile-photos%2F&psig=AOvVaw1vGMfr0TMqx0X4K3E6a6S3&ust=1584041272239104",
+                    profile_image_url_https: "https://i2.wp.com/www.sardiniauniqueproperties.com/wp-content/uploads/2015/10/Square-Profile-Pic-1-1.jpg",
                     location: { 
                         country: 'United States of America', 
                         state: 'FL' 
@@ -69,7 +69,7 @@ export default {
                 { 
                     screen_name: 'e', 
                     tweets: [{}, {}, {}], 
-                    profile_imgae_url_https: "https://www.google.com/url?sa=i&source=images&cd=&ved=2ahUKEwimt6zdk5PoAhVmxYUKHcPeAiEQjRx6BAgBEAQ&url=https%3A%2F%2Fwww.rd.com%2Fadvice%2Frelationships%2Fonline-dating-profile-photos%2F&psig=AOvVaw1vGMfr0TMqx0X4K3E6a6S3&ust=1584041272239104",
+                    profile_image_url_https: "https://i2.wp.com/www.sardiniauniqueproperties.com/wp-content/uploads/2015/10/Square-Profile-Pic-1-1.jpg",
                     location: { 
                         country: 'Canada', 
                         state: 'AB' 
@@ -78,7 +78,7 @@ export default {
                 { 
                     screen_name: 'f', 
                     tweets: [{}, {}, {}], 
-                    profile_imgae_url_https: "https://www.google.com/url?sa=i&source=images&cd=&ved=2ahUKEwimt6zdk5PoAhVmxYUKHcPeAiEQjRx6BAgBEAQ&url=https%3A%2F%2Fwww.rd.com%2Fadvice%2Frelationships%2Fonline-dating-profile-photos%2F&psig=AOvVaw1vGMfr0TMqx0X4K3E6a6S3&ust=1584041272239104",
+                    profile_image_url_https: "https://i2.wp.com/www.sardiniauniqueproperties.com/wp-content/uploads/2015/10/Square-Profile-Pic-1-1.jpg",
                     location: { 
                         country: 'Canada', 
                         state: 'ON' 
@@ -87,7 +87,7 @@ export default {
                 { 
                     screen_name: 'g', 
                     tweets: [{}, {}, {}], 
-                    profile_imgae_url_https: "https://www.google.com/url?sa=i&source=images&cd=&ved=2ahUKEwimt6zdk5PoAhVmxYUKHcPeAiEQjRx6BAgBEAQ&url=https%3A%2F%2Fwww.rd.com%2Fadvice%2Frelationships%2Fonline-dating-profile-photos%2F&psig=AOvVaw1vGMfr0TMqx0X4K3E6a6S3&ust=1584041272239104",
+                    profile_image_url_https: "https://i2.wp.com/www.sardiniauniqueproperties.com/wp-content/uploads/2015/10/Square-Profile-Pic-1-1.jpg",
                     location: { 
                         country: 'India',
                         state: 'Delhi'
