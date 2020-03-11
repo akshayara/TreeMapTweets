@@ -27,6 +27,7 @@
                     :cy="circleYPos(leaf)(Math.ceil(index / totcol(leaf)))"
                     :r=10
                     :transform="'translate(' + textTransform[0] + ',' + (textTransform[1] + 60) +')'"
+                    :fill="selectedCountryName == leaf.data.users[0].location.country ? 'red' : 'black'"
                     @mouseover="mouseOverTree.call({}, leaf.data.users[0].location.country)"
                     @mouseout="mouseOutTree">
                 </circle>  
@@ -58,6 +59,10 @@ export default {
             default: function() {
                 return []
             }
+        },
+        selectedCountryName: {
+            type: String,
+            default: ''
         }
     },
     computed:{
@@ -178,10 +183,10 @@ export default {
             return d.y1-d.y0
         },
         mouseOverTree: function(countryName){
-            this.$emit('countryNametoPage', countryName)
+            this.$emit('highlightChange', countryName)
         },
         mouseOutTree: function(){
-             this.$emit('countryMouseOut', '')
+            this.$emit('highlightChange', '')
         }
     }
 }
