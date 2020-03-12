@@ -86,6 +86,7 @@ export default {
             this.$emit('highlightChange', '')
         },
         showToolTip: function(countryName){
+            console.log(countryName)
             return d3.select('#'+ countryName)
                     .style('position','absolute')
                     .style('opacity',0.9)
