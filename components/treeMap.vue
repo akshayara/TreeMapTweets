@@ -2,8 +2,8 @@
     <div>
         <svg
             id="treeMapViz"
-           :viewBox='[0, 0, width, height]'
-            class="viewBoxStyle" 
+            :width="width"
+            :height="height" 
             >
             <defs>
                 <pattern
@@ -11,8 +11,8 @@
                     :key="index"
                     :id="profile.screen_name"
                     patternContentUnits="objectBoundingBox"
-                    height="100%"
-                    width="100%">
+                    height="95%"
+                    width="95%">
                     <image
                         width="1"
                         height="1"
@@ -65,11 +65,22 @@ export default {
     props:{
         width: {
             type: Number,
-            default: 1000
+            default: 600
         },
         height: {
             type: Number,
-            default: 1000
+            default: 600
+        },
+        margin: {
+            type: Object,
+            default: function() {
+                return {
+                    top: 5,
+                    right: 5,
+                    left: 5,
+                    bottom: 5
+                }
+            }
         },
         users: {
             type: Array,
@@ -213,7 +224,7 @@ export default {
 </script>
 <style>
 .viewBoxStyle {
-    font-size: 20px;
+    font-size: 15px;
     font: sans-serif    
 }
 .rectStyle {
