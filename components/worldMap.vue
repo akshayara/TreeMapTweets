@@ -34,7 +34,7 @@ export default {
     props: {
         width: {
             type: Number,
-            default: 960
+            default: 950
         },
         height: {
             type: Number,
@@ -73,23 +73,29 @@ export default {
         heightScat: function(){
             return this.height - this.margin.top - this.margin.bottom
         },
-        // getCountryName: function(){
-        //     return this.countryName
-        // }
     },
     methods: {
         sampleGeoPath: function() {
             return d3Geo.geoPath(this.projection)
         },
         mouseOver: function(countryName) {
+            this.showToolTip(countryName)
             this.$emit('highlightChange', countryName)
         },
         mouseOut: function(id) {
             this.$emit('highlightChange', '')
+        },
+        showToolTip: function(countryName){
+            return d3.select('#'+ countryName)
+                    .style('position','absolute')
+                    .style('opacity',0.9)
+                    .style('visibility','visible')
+                    .text(countryName)
+
         }
     }
 }
 </script>
-<style scoped>
+<style>
 
 </style>
