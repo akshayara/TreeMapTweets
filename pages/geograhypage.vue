@@ -120,9 +120,10 @@ export default {
 </script>
 <style scoped>
 .geoDiv div {
-      width:500px;
-      display:inline-block;
-      padding:5px;
+      float: left;
+      box-sizing: border-box;
+      width: 32%;
+      padding: 15px;
       text-align:center;
       color:#000000;
       font-family: arial, sans-serif;
