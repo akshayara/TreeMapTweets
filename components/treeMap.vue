@@ -2,7 +2,7 @@
     <div>
         <svg
             id="treeMapViz"
-            :viewBox='[0, 0, width, height]'
+           :viewBox='[0, 0, width, height]'
             class="viewBoxStyle" 
             >
             <defs>
@@ -43,6 +43,8 @@
                     :r="radius"
                     :transform="'translate(' + textTransform[0] + ',' + (textTransform[1] + 60) +')'"
                     :fill="'url(#' + user.screen_name + ')'"
+                    :stroke="selectedCountryName == leaf.data.users[0].location.country ? 'red' : 'black'"
+                    stroke-width="1"
                     @mouseover="mouseOverTree.call({}, leaf.data.users[0].location.country)"
                     @mouseout="mouseOutTree">
                 </circle>  
@@ -56,7 +58,7 @@ import * as underscore from 'underscore'
 export default {
     data(){
         return {
-            colorScale: d3.scaleOrdinal(d3.schemeAccent),
+            colorScale: d3.scaleOrdinal(d3.schemeCategory10),
             textTransform: [30, 30]
         }
     },
@@ -131,14 +133,14 @@ export default {
         
         totcol: function(){
             return function(d){
-                return this.rectWidth(d)/4*this.radius
+                return this.rectWidth(d)/(4*this.radius)
             }
         },
 
         //Total rows
         totRow: function(){
             return function(d){
-                return this.rectHeight(d)/4*this.radius
+                return this.rectHeight(d)/(4*this.radius)
             }
         },
         
@@ -180,7 +182,7 @@ export default {
             }
         },
         radius: function(){
-            return 50
+            return 15
         }
     },
     methods: {
