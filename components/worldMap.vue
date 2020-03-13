@@ -79,19 +79,10 @@ export default {
             return d3Geo.geoPath(this.projection)
         },
         mouseOver: function(countryName) {
-            this.showToolTip(countryName)
             this.$emit('highlightChange', countryName)
         },
         mouseOut: function(id) {
             this.$emit('highlightChange', '')
-        },
-        showToolTip: function(countryName){
-            return  this.svgGroup.select('#'+ countryName)
-                    .style('position','absolute')
-                    .style('opacity',0.9)
-                    .style('visibility','visible')
-                    .text(countryName)
-
         }
     }
 }
