@@ -7,7 +7,6 @@
                 :tranform="'translate(' + this.margin.left + ',' + this.margin.top + ')'"
                 :width="this.widthScat"
                 :height="this.heightScat">
-
             </g>
             <g id="myG">
                 <path
@@ -15,7 +14,7 @@
                     :key="index"
                     :d="sampleGeoPath()(country)"
                     :id="country.properties.name"
-                    :fill="country.properties.name == selectedCountryName ? '#3B5998' : '#ccc'"
+                    :fill="country.properties.name == selectedCountryName ? '#0D47A1' : '#BBDEFB'"
                     @mouseover="mouseOver(country.properties.name)"
                     @mouseout="mouseOut(country.properties.name)">
                 </path>
@@ -87,7 +86,7 @@ export default {
         },
         showToolTip: function(countryName){
             console.log(countryName)
-            return d3.select('#'+ countryName)
+            return  this.svgGroup.select('#'+ countryName)
                     .style('position','absolute')
                     .style('opacity',0.9)
                     .style('visibility','visible')
