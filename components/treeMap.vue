@@ -58,7 +58,7 @@ import * as underscore from 'underscore'
 export default {
     data(){
         return {
-            colorScale: d3.scaleOrdinal(d3.schemeCategory10),
+            colorScale: d3.scaleOrdinal(d3.schemeCategory10 ),
             textTransform: [30, 30]
         }
     },
