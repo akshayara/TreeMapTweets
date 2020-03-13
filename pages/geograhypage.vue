@@ -67,7 +67,7 @@ export default {
                     } 
                 },
                 { 
-                    screen_name: 'aa', 
+                    screen_name: 'a', 
                     tweets: [{}, {}, {}], 
                     profile_image_url_https: "https://i2.wp.com/www.sardiniauniqueproperties.com/wp-content/uploads/2015/10/Square-Profile-Pic-1-1.jpg",
                     location: { 
