@@ -2,7 +2,8 @@
     <div>
         <svg
             :width="width"
-            :height="height">
+            :height="height"
+            background-color='blue'>
             <g 
                 :tranform="'translate(' + this.margin.left + ',' + this.margin.top + ')'"
                 :width="this.widthScat"
@@ -14,7 +15,7 @@
                     :key="index"
                     :d="sampleGeoPath()(country)"
                     :id="country.properties.name"
-                    :fill="country.properties.name == selectedCountryName ? '#0D47A1' : '#BBDEFB'"
+                    :fill="country.properties.name == selectedCountryName ? '#FB8C00' : '#01579B'"
                     @mouseover="mouseOver(country.properties.name)"
                     @mouseout="mouseOut(country.properties.name)">
                 </path>
@@ -85,7 +86,6 @@ export default {
             this.$emit('highlightChange', '')
         },
         showToolTip: function(countryName){
-            console.log(countryName)
             return  this.svgGroup.select('#'+ countryName)
                     .style('position','absolute')
                     .style('opacity',0.9)
