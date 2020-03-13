@@ -43,7 +43,7 @@
                     :r="radius"
                     :transform="'translate(' + textTransform[0] + ',' + (textTransform[1] + 60) +')'"
                     :fill="'url(#' + user.screen_name + ')'"
-                    :stroke="selectedCountryName == leaf.data.users[0].location.country ? 'red' : 'black'"
+                    :stroke="selectedCountryName == leaf.data.users[0].location.country ? 'red' : 'white'"
                     stroke-width="1"
                     @mouseover="mouseOverTree.call({}, leaf.data.users[0].location.country)"
                     @mouseout="mouseOutTree">
