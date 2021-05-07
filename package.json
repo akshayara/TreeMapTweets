@@ -13,7 +13,7 @@
   "dependencies": {
     "nuxt": "^2.0.0",
     "d3": "~5.15.0",
-    "underscore": "1.9.2"
+    "underscore": "1.12.1"
   },
   "devDependencies": {}
 }
